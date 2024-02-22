@@ -1,5 +1,5 @@
 # Project: Sudoku Board
-<h2>Note * Must be Completed in Javascript</h2>
+<h4>Note * Must be Completed in Javascript</h4>
 
 Functional Requirements
 1. Generate Board
