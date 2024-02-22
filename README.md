@@ -1,22 +1,19 @@
 # Project: Sudoku Board
-<h4>Note * Must be Completed in Javascript</h4>
 
 Functional Requirements
 1. Generate Board
-    - Allow Multiple sizes
 2. Validate Solved Board
 3. Automatically Solve Board
-    - Create efficient solving algorithm
 4. Error Handling
-    Handle invalid user inputs and return feedback
 
 
 User Requirements
-- Enter Numbers into board
-- Press Generate Buttom to generate new board
-- Press Validate Button to check their answers
-- Clean User Interface(UI)
+1. Sudoku Grid to Enter Numbers
+2. Generate Button
+3. Validate Button
+4. Clean User Interface(UI)
 
 
+<h4>Note * Must be Completed in JavaScript *</h4>
 
 
