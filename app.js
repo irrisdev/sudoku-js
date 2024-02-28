@@ -1,51 +1,54 @@
-$(document).ready(function () {
-  $("input").focus(function () {
-    $(this).css({ outline: "none" });
-  });
-});
+
 document.addEventListener("DOMContentLoaded", function () {
-  const root = document.getElementById("main-board");
-  let sub_grid;
-  let grid_item;
-  let counter = 1;
+  
+  setupPage();
 
-  for (let i = 1; i <= size; i++) {
-    sub_grid = document.createElement("div");
-    sub_grid.className = "subgrid";
-    sub_grid.id = "g" + i;
-
-    for (let j = 1; j <= size; j++) {
-      grid_item = document.createElement("input");
-      grid_item.type = "text";
-      grid_item.style.border = "none";
-      grid_item.style.textAlign = "center";
-      grid_item.className = "grid-item i" + counter;
-      grid_item.value = j;
-
-      sub_grid.append(grid_item);
-      counter++;
-    }
-
-    root.append(sub_grid);
-  }
 });
+
+
+
+function setupPage(){
+  const root = document.body;
+  const table = document.createElement("table");
+  table.id = "sudoku";
+  let grid, cell;
+  
+  for (let i = 0; i < 9; i++){
+    grid = document.createElement("tr");
+    grid.className = "grid-row";
+    for(let j = 0; j < 9; j++){
+
+      cell = document.createElement("td");
+      cell.className = "grid-cell c" + ((i*9)+j);
+      
+      const input = document.createElement("input");
+      input.type = "text";
+      input.maxLength = "1";
+      input.className = "sudoku-input"; 
+      cell.appendChild(input);
+
+      grid.append(cell);
+    }
+    table.append(grid);
+  }
+
+  root.append(table)
+
+}
+
 
 const size = 9;
-const randomNum = (n) => Math.floor(Math.random() * n);
 let board, locked;
-
-generate(30);
+const randomNum = (n) => Math.floor(Math.random() * n);
 
 function generate(n) {
-  board = Array(size)
-    .fill()
-    .map(() => Array(size).fill(0));
+
+  solution = Array(size).fill().map(() => Array(size).fill(0));
+
   locked = Array(81).fill(false);
 
   fillLocked(n, locked);
-  fillBoard(locked, board);
-
-
+  fillBoard(solution);
 
 }
 
