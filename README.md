@@ -1,19 +1,13 @@
-# Project: Sudoku Board
+# Sudoku Solver and Generator (JavaScript)
 
-Functional Requirements
-1. Generate Board
-2. Validate Solved Board
-3. Automatically Solve Board
-4. Error Handling
+This project is a web-based Sudoku solver and generator implemented in JavaScript. It allows users to play Sudoku puzzles interactively in the browser.
 
+## Features
 
-User Requirements
-1. Sudoku Grid to Enter Numbers
-2. Generate Button
-3. Validate Button
-4. Clean User Interface(UI)
+- Random Sudoku puzzle generation
+- Interactive Sudoku puzzle solving
+- Simple and intuitive user interface
 
+## Usage
 
-<h4>Note * Must be Completed in JavaScript *</h4>
-
-
+Open the `index.html` file in your web browser to start playing Sudoku puzzles.
