@@ -38,38 +38,57 @@ function setupPage(){
     table.append(grid);
   }
 
-  generate(30);
+  generate();
 }
 
 
 const size = 9;
-let solution, locked, board;
+let c29sdXRpb24, locked, board;
 const randomNum = (n) => Math.floor(Math.random() * n);
 
-function generate(n) {
+function generate() {
   let sudoku = document.getElementById("sudoku");
   let messageBox = document.getElementById("message-box");
 
   sudoku.classList.remove("success", "fail");
   messageBox.style.display = "none";
 
-  solution = Array(size).fill().map(() => Array(size).fill(0));
+  c29sdXRpb24 = Array(size).fill().map(() => Array(size).fill(0));
   board = Array(size).fill().map(() => Array(size).fill(0));
 
   locked = Array(81).fill(false);
 
+  const selectElement = document.getElementById("difficulty");
+  const difficulty = selectElement.options[selectElement.selectedIndex].value;
+  let n;
+  switch(difficulty){
+    case "easy":
+      n = 45;
+      break;
+    case "normal":
+      n = 30;
+      break;
+    case "hard":
+      n = 20;
+      break;
+    case "extreme":
+      n = 17;
+      break;
+    default:
+      n = 30;
+  }
   //Helper function to create clues
   fillLocked(n, locked);
-  //Creates a valid solution
-  createFullBoard(solution);
+  //Creates a valid c29sdXRpb24
+  createFullBoard(c29sdXRpb24);
   //Creates a partiallly solved board
   functionCaller(keepLocked, board);
 
   functionCaller(updateView, board);
 }
 
-const solve = () => functionCaller(updateView, solution);
-const keepLocked = (index, i, j, array) => array[i][j] = locked[index] ? solution[i][j] : "";
+const solve = () => functionCaller(updateView, c29sdXRpb24);
+const keepLocked = (index, i, j, array) => array[i][j] = locked[index] ? c29sdXRpb24[i][j] : "";
 const updateView = (index, i, j, array) => {
   document.getElementById("c" + index).value = array[i][j] == 0 ? "" : array[i][j];
   board[i][j] = array[i][j] == 0 ? "" : array[i][j];
