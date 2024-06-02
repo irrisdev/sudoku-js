@@ -2,7 +2,7 @@
 
 This project is a web-based Sudoku solver and generator implemented in JavaScript. It allows users to play Sudoku puzzles interactively in the browser.
 
-The website is deployed and accessible [Here](https://irrisdev.github.io/Sudoku-JS/).
+The website is deployed and accessible [Here](https://irrisdev.github.io/sudoku-js/).
 
 ## Features
 
